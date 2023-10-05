@@ -4,11 +4,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="256.0" prefWidth="287.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.example.jeu.HelloController">
+<VBox alignment="CENTER" prefHeight="256.0" prefWidth="287.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jeu.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
     <Label fx:id="welcomeText" />
     <Button onAction="#onHelloButtonClick" text="Hello!" />
+   <Label text="Que voulez vous faire" />
+   <ButtonBar prefHeight="40.0" prefWidth="200.0">
+     <buttons>
+       <Button  onAction="#ScenePseudo" mnemonicParsing="false" text="Jouer" />
+         <Button mnemonicParsing="false" text="Visualiser le tableau des scores" />
+         <Button onAction="#QuitterPartie" mnemonicParsing="false" text="Quitter" />
+     </buttons>
+   </ButtonBar>
 </VBox>
