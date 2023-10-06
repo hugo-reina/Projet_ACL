@@ -58,12 +58,11 @@ public class HelloController{
         Carte c1;
         Carte c2;
         c1 = paquet.piocherCarte();
-        String cheminDossierCartes = "file:///Users/hugoreina/IdeaProjects/Projet ACL/src/main/cartes/";
-        String nomFichierImage = c1.number + "_" + c1.couleur + ".png";
-        String cheminImage = cheminDossierCartes + nomFichierImage;
-
-        Image image = new Image(cheminImage);
+        Image image = new Image("file:src/main/cartes/"+c1.number+"_"+c1.couleur+".png");
         System.out.println(image.getUrl());
+        imageView.setImage(image);
+
+
         // Agrandir l'ImageView (par exemple, largeur = 400, hauteur = 300)
 
         imageView.setImage(image);

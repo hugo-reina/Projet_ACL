@@ -10,7 +10,7 @@ public class Paquet {
     public Paquet() {
         this.paquet = new ArrayList<>();
         String[] couleurs = {"pique", "coeur", "trefle", "carreau"};
-        String[] numero = {"7", "8", "9", "10", "V", "D", "K", "A"};
+        String[] numero = {"7", "8", "9", "10", "V", "D", "R", "A"};
 
         for (String couleur : couleurs) {
             for (String valeur : numero) {
@@ -54,7 +54,7 @@ public class Paquet {
             case "D":
                 number = 3;
                 break;
-            case "K":
+            case "R":
                 number = 4;
                 break;
             case "10":
