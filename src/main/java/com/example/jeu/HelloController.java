@@ -8,10 +8,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class HelloController{
     @FXML
@@ -19,6 +20,9 @@ public class HelloController{
     private Stage stage;
     private Parent root;
     private Scene scene;
+    @FXML
+    private ImageView imageView; // Récupère l'ImageView depuis le fichier FXML
+
     @FXML
     public void onHelloButtonClick() {
         //création du paquet de carte
@@ -42,5 +46,19 @@ public class HelloController{
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void pioche(ActionEvent actionEvent) {
+        //création du paquet de carte
+        Paquet paquet = new Paquet();
+        //melange
+        paquet.melanger();
+
+        //Carte
+        Carte c1;
+        c1 = paquet.piocherCarte();
+        Image image = new Image("file::///Users/hugoreina/IdeaProjects/Projet ACL/src/main/cartes/"+c1.number+"_"+c1.couleur+".png");
+        System.out.println(image.getUrl());
+        imageView.setImage(image);
     }
 }
