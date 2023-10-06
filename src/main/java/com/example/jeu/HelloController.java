@@ -65,6 +65,6 @@ public class HelloController{
 
         // Agrandir l'ImageView (par exemple, largeur = 400, hauteur = 300)
 
-        imageView.setImage(image);
+
     }
 }
