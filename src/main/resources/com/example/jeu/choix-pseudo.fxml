@@ -9,6 +9,7 @@
         <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </padding>
+    <Label fx:id="parties" />
    <HBox prefHeight="100.0" prefWidth="200.0">
       <children>
               <ImageView fx:id="imageView2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
@@ -17,10 +18,11 @@
    </HBox>
 
 
-
+    <Label fx:id="pts" />
         <ButtonBar prefHeight="40.0" prefWidth="200.0">
             <buttons>
-                <Button mnemonicParsing="false" onAction="#pioche" text="Piocher" />
+                <Button fx:id="btn_pioche" mnemonicParsing="false" onAction="#pioche" text="Piocher" />
+                <Button visible="false" fx:id="btn_suivant" mnemonicParsing="false" onAction="#pageScore" text="Suivant" />
             </buttons>
         </ButtonBar>
     </VBox>
