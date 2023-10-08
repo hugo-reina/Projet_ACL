@@ -72,9 +72,6 @@ public class Paquet {
             System.out.println("Le paquet est vide. Impossible de piocher une carte.");
             return null; // Ou générer une exception si nécessaire
         }
-        else {
-            System.out.println(paquet.get(0));
-        }
         Random rand = new Random();
         int indexCartePiochee = rand.nextInt(paquet.size());
         Carte cartePiochee = paquet.remove(indexCartePiochee);

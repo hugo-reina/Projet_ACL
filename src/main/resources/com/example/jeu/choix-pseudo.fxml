@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-
-<?import javafx.geometry.Insets?>
-    <VBox alignment="CENTER" prefHeight="256.0" prefWidth="287.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jeu.HelloController">
+<VBox alignment="CENTER" prefHeight="256.0" prefWidth="400" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jeu.HelloController">
         <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </padding>
-        <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+              <ImageView fx:id="imageView2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+              <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      </children>
+   </HBox>
+
+
 
         <ButtonBar prefHeight="40.0" prefWidth="200.0">
             <buttons>
-                <Button onAction="#pioche" mnemonicParsing="false" text="Button" />
+                <Button mnemonicParsing="false" onAction="#pioche" text="Piocher" />
             </buttons>
         </ButtonBar>
     </VBox>

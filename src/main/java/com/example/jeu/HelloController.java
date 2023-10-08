@@ -15,25 +15,16 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloController{
-    @FXML
-    private Label welcomeText;
     private Stage stage;
     private Parent root;
     private Scene scene;
     @FXML
     private ImageView imageView; // Récupère l'ImageView depuis le fichier FXML
-
     @FXML
-    public void onHelloButtonClick() {
-        //création du paquet de carte
-        Paquet paquet = new Paquet();
-        //melange
-        paquet.melanger();
-        //Carte
-        Carte c1;
-        c1 = paquet.piocherCarte();
-        welcomeText.setText(c1.couleur + " " + c1.number);
-    }
+    private ImageView imageView2; // Récupère l'ImageView depuis le fichier FXML
+
+    private static Paquet paquet;
+
 
     public void QuitterPartie(ActionEvent actionEvent) {
         Platform.exit();
@@ -46,25 +37,29 @@ public class HelloController{
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
     }
 
     public void pioche(ActionEvent actionEvent) {
-        //création du paquet de carte
-        Paquet paquet = new Paquet();
-        //melange
-        paquet.melanger();
-
+        if (paquet == null) {
+            // Créez le paquet si c'est la première utilisation ou s'il est vide
+            paquet = new Paquet();
+            paquet.melanger();
+        }
+        System.out.println(paquet.getCartes().size());
         //Carte
-        Carte c1;
-        Carte c2;
-        c1 = paquet.piocherCarte();
-        Image image = new Image("file:src/main/cartes/"+c1.number+"_"+c1.couleur+".png");
-        System.out.println(image.getUrl());
-        imageView.setImage(image);
-
-
-        // Agrandir l'ImageView (par exemple, largeur = 400, hauteur = 300)
-
+        try {
+            Carte c1;
+            Carte c2;
+            c1 = paquet.piocherCarte();
+            c2 = paquet.piocherCarte();
+            Image image = new Image("file:src/main/cartes/" + c1.number + "_" + c1.couleur + ".png");
+            Image image2 = new Image("file:src/main/cartes/" + c2.number + "_" + c2.couleur + ".png");
+            imageView.setImage(image);
+            imageView2.setImage(image2);
+        }catch (Exception e){
+            System.out.println(e);
+        }
 
     }
 }
