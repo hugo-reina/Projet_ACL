@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Paquet {
 
-    private ArrayList<Carte> paquet;
+    private final ArrayList<Carte> paquet;
 
     public Paquet() {
         this.paquet = new ArrayList<>();
