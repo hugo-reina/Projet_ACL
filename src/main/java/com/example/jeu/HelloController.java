@@ -7,8 +7,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -27,6 +29,15 @@ public class HelloController{
     private ImageView imageView; // Récupère l'ImageView depuis le fichier FXML
     @FXML
     private ImageView imageView2; // Récupère l'ImageView depuis le fichier FXML
+
+    @FXML
+    private TextField Saisie;
+
+    private String Valide;
+    public Label Nom;
+
+    @FXML
+    private Button ValidPseudo;
 
     int points;
     int total = 0;
@@ -88,6 +99,7 @@ public class HelloController{
                 total = total + points;
                 pts.setText("Mon score " + total + " (+" + points + ")");
                 parties.setText("Partie numéro " + nbPartie);
+                //Nom.setText(Saisie.getText());
             } catch (Exception e) {
                 System.out.println(e);
             }
@@ -102,5 +114,19 @@ public class HelloController{
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+    }
+
+    public void ConfigPseudo(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/jeu/ConfigPseudo.fxml"));
+        root = fxmlLoader.load();
+        stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void configPseudoAction(ActionEvent event) {
     }
 }
