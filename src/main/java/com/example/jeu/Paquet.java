@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Paquet {
 
-    private ArrayList<Carte> paquet;
+    private final ArrayList<Carte> paquet;
 
     public Paquet() {
         this.paquet = new ArrayList<>();
@@ -71,9 +71,6 @@ public class Paquet {
         if (paquet.isEmpty()) {
             System.out.println("Le paquet est vide. Impossible de piocher une carte.");
             return null; // Ou générer une exception si nécessaire
-        }
-        else {
-            System.out.println(paquet.get(0));
         }
         Random rand = new Random();
         int indexCartePiochee = rand.nextInt(paquet.size());
