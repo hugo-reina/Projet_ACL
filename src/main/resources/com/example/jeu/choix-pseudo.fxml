@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" spacing="20.0" style="-fx-background-image: url('file:src/main/cartes/fond.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jeu.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"  />
+    <ButtonBar prefHeight="170.0" prefWidth="180.0">
+        <buttons>
+            <Button fx:id="imageButton" mnemonicParsing="false" onAction="#pioche" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                <font>
+                    <Font name="Apple Braille" size="14.0" />
+                </font>
+                <graphic>
+                    <ImageView fitHeight="170.0" fitWidth="180.0">
+                        <image>
+                            <Image url="file:src/main/cartes/dos.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </buttons>
+    </ButtonBar>
 
 
-<?import javafx.geometry.Insets?>
-    <VBox alignment="CENTER" prefHeight="256.0" prefWidth="287.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jeu.HelloController">
-        <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-        </padding>
-        <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-
-        <ButtonBar prefHeight="40.0" prefWidth="200.0">
-            <buttons>
-                <Button onAction="#pioche" mnemonicParsing="false" text="Button" />
-            </buttons>
-        </ButtonBar>
-    </VBox>
+</VBox>
