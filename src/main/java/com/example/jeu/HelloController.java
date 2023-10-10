@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -20,8 +19,8 @@ import java.io.IOException;
 public class HelloController{
     public Label pts;
     public Label parties;
-    public Button btn_pioche;
     public Button btn_suivant;
+    public Button btn_pioche;
     private Stage stage;
     private Parent root;
     private Scene scene;
@@ -117,16 +116,10 @@ public class HelloController{
 
     }
 
-    public void ConfigPseudo(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/jeu/ConfigPseudo.fxml"));
-        root = fxmlLoader.load();
-        stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
     @FXML
     public void configPseudoAction(ActionEvent event) {
+    }
+
+    public void ConfigPseudo(ActionEvent actionEvent) {
     }
 }

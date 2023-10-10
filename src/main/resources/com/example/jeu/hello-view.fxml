@@ -11,7 +11,7 @@
    <Label text="Que voulez vous faire" />
    <ButtonBar prefHeight="40.0" prefWidth="200.0">
      <buttons>
-       <Button  onAction="#ConfigPseudo" mnemonicParsing="false" text="Jouer" />
+       <Button  onAction="#ScenePseudo" mnemonicParsing="false" text="Jouer" />
          <Button mnemonicParsing="false" text="Visualiser le tableau des scores" />
          <Button onAction="#QuitterPartie" mnemonicParsing="false" text="Quitter" />
      </buttons>
